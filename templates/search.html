@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+
+  <style>
+    body{
+        background-image: url("../");
+        color: rgb(139, 35, 35);
+        margin: 20px;
+    }
+
+  </style>
+{% endblock %}
+
+
+{% block body %}
+<div class="filter-wrapper">
+    <div class="filter-toggle">
+      <h3>Filter Results</h3>
+    </div>
+    <form> 
+      <input type="text" placeholder="Search the website" list="website">
+      <datalist id="website">
+        <option>Flipkart</option>
+        <option>snapdeal</option>
+        
+1      </datalist>
+      <input type="submit" value=">">
+    <form> 
+      <input type="text" placeholder="Enter the product-name">
+      <input type="submit" value=">">wait for discount list
+    </form>
+  </div>			
+  
+
+
+
+{% endblock %}

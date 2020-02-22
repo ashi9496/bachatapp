@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+    body{
+        background-color: rgba(73, 60, 32, 0.466);
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h3 align="centre" c>CANDIDATE REGISTRATION FORM</h3>
+<form method="POST"> 
+    <table align="center" cellpadding = "10">
+        
+        <!----- First Name ---------------------------------------------------------->
+        <tr>
+            <td>FIRST NAME</td>
+            <td><input type="text" name="firstname" maxlength="30" id="firstname"/>
+                (max 30 characters a-z and A-Z)
+            </td>
+        </tr>
+        
+        <!----- Last Name ---------------------------------------------------------->
+        <tr>
+            <td>LAST NAME</td>
+            <td><input type="text" name="lastname" maxlength="30" id="lastname"/>
+                (max 30 characters a-z and A-Z)
+            </td>
+        </tr>
+        
+        
+        <!----- Email Id ---------------------------------------------------------->
+        <tr>
+            <td>EMAIL ID</td>
+            <td><input type="text" name="email" maxlength="100" id="email"/></td>
+        </tr>
+        <!------Password---------------------------------------------------->
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="text" name="password" maxlength="100" id="password"/></td>
+        </tr>
+        
+        <!----- Mobile Number ---------------------------------------------------------->
+        <tr>
+            <td>MOBILE NUMBER</td>
+            <td>
+                <input type="text" name="mobile" maxlength="10" id="mobile"/>
+                (10 digit number)
+            </td>
+        </tr>
+        
+        
+        <!----- Pin Code ---------------------------------------------------------->
+        <tr>
+            <td>PIN CODE</td>
+            <td><input type="text" name="pincode" maxlength="6" id="pincode" />
+                (6 digit number)
+            </td>
+        </tr>
+        
+        
+        <!----- Country ---------------------------------------------------------->
+        <tr>
+            <td>COUNTRY</td>
+            <td><input type="text" name="country" value="India" readonly="readonly" /></td>
+        </tr>
+        
+        
+        
+        <!----- Submit and Reset ------------------------------------------------->
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $('form').submit(function(event){
+            console.log("submit")
+            event.preventDefault()
+            
+            $('button').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...')
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            var mobile = $('#mobile').val();
+            var pincode = $('#pincode').val();
+            
+            formdata = {
+                "firstname":firstname,
+                "lastname":lastname,
+                "email":email,
+                "password":password,
+                "mobile": mobile,
+                "pincode":pincode
+            }
+
+            console.log(formdata)
+            $.ajax({
+                type: "POST",
+                url: "/register",
+                data: formdata,
+                success: function (response) {
+                    $('button').html("done")
+                    if (response.status =='success'){
+                        $('.results').html('the form is processed, go home!')
+                    }else{
+                        $('.results').html('go home! you must have fill it wrong')
+                    }
+                },
+                error:function(response){
+                }
+               
+            });
+            event.stopPropagation()
+            event.stopImmediatePropagation()
+        })
+    });
+</script>
+{% endblock %}

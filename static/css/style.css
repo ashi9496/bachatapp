@@ -1,0 +1,242 @@
+
+@import url(../css/fonts.css);
+
+html,body{
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root{
+
+    /* ..theme color......*/
+    --text-gray:#3f4954;
+    --text-light:#686666da;
+    --text-color:#0f0f0f;
+    --white:#ffffff;
+    --midnight:#0fac43;
+
+    /*........gradient color..........*/
+
+    --sky: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
+
+    /*   thheme font family        */
+    --Mclaren:"Mclaren",cursive;
+    --Inconsolata:'Inconsolata',cursive;
+    --Ljmc:'Liu_Jian_Mao_Cao',cursive;
+    --lora:"Lora",cursive;
+}
+
+
+/*......global classes.........*/
+    a{
+        text-decoration: none;
+        color: var(--text-gray);
+    }
+    .flex-row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+    ul{
+        list-style-type: none;
+    }
+    h1{
+        font-family: var(--Mclaren);
+        font-size: 2.5rem;
+        
+    }
+    h2{
+        font-family: var(--Mclaren);
+    } 
+        
+    
+    h3{
+        font-family: var(--Ljmc);
+        font-size: 1.5rem;
+
+    }
+    button.btn{
+        border:none;
+        border-radius: 2rem;
+        padding: 1rem 3rem;
+        font-size: 1rem;
+        font-family: var(--Mclaren);
+        cursor: pointer;
+    }
+    span{
+        font-family: var(--lora);
+        font-size: 1.5rem;
+    }
+    .container{
+        margin: 0 5vw;
+    }
+
+
+/*......global classes.........*/
+/*.......navgation menu........*/
+
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+}
+.nav .nav-menu{
+    justify-content: space-between;
+}
+
+.nav .toggle-collapse{
+    position: absolute;
+    top: 0%;
+    
+    cursor: pointer;
+    display: none;
+}
+.nav .toggle-collapse .toggle-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+
+}
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--text-gray);
+}
+.collapse{
+    height: 30rem;
+}
+
+
+
+.nav .nav-items{
+    
+    display: flex;
+    margin:0;
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1rem;
+    position: relative;
+    font-family:var(--Inconsolata);
+    font-size: 1.1rem;
+}
+.nav .nav-items .nav-link:hover{
+    background-color: var(--midnight);
+}
+
+.nav .nav-items .nav-link:hover a{
+    color: black;
+}
+
+
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Mclaren);
+    font-size: 1.6rem;
+
+}
+.nav .social{
+    padding: 1.1rem;
+}
+
+.nav .social i{
+    padding:0 .5rem;
+
+}
+
+.nav .social i:hover{
+    color: #e9d97e;
+}
+
+/*.......navgation menu........*/
+
+/*......... site main part...............*/
+
+    main .site-title{
+        background: url(../image/newimg/clouds-cloudy-farm-236047.jpg);
+        background-size: cover;
+        height: 110vh;
+        display: flex;
+        justify-content: center;
+    }
+    main .site-title .site-background{
+        padding-top: 10rem;
+        text-align: center;
+        color: var(--white);
+
+    }
+    main .site-title h1,h3{
+        margin: .3rem;
+    }
+    main .site-title .btn{
+        margin:1.8rem;
+        background: var(--sky);
+    }
+    main .site-title .btn:hover{
+        background: transparent;
+        border: 1px solid var(--white);
+        color: var(--white);
+    }
+
+/*......... site main part...............*/
+
+/*................blog Carousel....................*/
+
+    main .blog{
+        padding: 1.5rem 0;
+        background: url(../image/newimg/adult-adventure-backpacker-372098.jpg);
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 110vh;
+        width: 100%;
+    }
+    main .blog .blog-post{
+        padding-top:7rem;
+
+    }
+    main .blog-post .blog-content{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width:70%;
+        margin: 3rem 2rem;
+        box-shadow: 10px 10px 10px rgba(37, 31, 31, 0.2)
+    }
+    main .blog-content .blog-title{
+        padding: 2rem 0;
+    }
+    main .blog-content .btn-blog{
+        padding: 2rem 1rem;
+        background: var(--sky);
+        margin: 5rem;
+    }
+    main .blog-content span{
+        display: block;
+    }
+
+/*................blog Carousel....................*/
+
+
+/* .....viewport less than 750px .....*/
+
+@media only screen and (max-width:750px){
+    .nav .nav-menu,.nav .nav-items{
+        flex-direction: column;
+    
+    }
+
+    .nav .toggle-collapse{
+        display: inline;
+    }
+
+}
+
+
+/* .....viewport .....*/

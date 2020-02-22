@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discount Place</title>
+    <!-----font awsome------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/all.css">
+
+    <!----------owl carousel-------------->
+
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <!----custom style---->
+    <link rel="stylesheet" href="../static/css/style.css">
+    {% block css %}{% endblock %}
+    
+<!----------owl carousel-------------->
+
+
+</head>
+<body>
+    <!---navigation-->
+    <nav class="nav" >
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Bachat App</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/login">login/signup</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/search">Search</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-youtube-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}{% endblock %}
+    
+
+    <!---navigation-------------------------->
+    <!---------  site section------------>
+
+    
+    <!---------  site section------------>
+
+   
+
+
+    <!----------jquery library----------->
+    <script src="../static/js/jquery3.4.1.min.js"></script>
+
+    <!----------owl carousel js-------------->
+
+    <script src="../static/js/owl.carousel.min.js"></script>
+
+
+
+    <!----custom javascript-->
+    <script src="../static/js/main.js"></script>
+
+
+    <!----script-->
+    {% block js %}{% endblock %}
+    
+</body>
+</html>

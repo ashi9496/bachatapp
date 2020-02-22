@@ -1,0 +1,23 @@
+/* ...font family Mclaren.....*/
+@font-face{
+    font-family:Mclaren;
+    src: url(../fonts/McLaren/McLaren-Regular.ttf);
+}
+
+/* ...font family Inconsolata.....*/
+@font-face{
+    font-family:Inconsolata;
+    src: url(../fonts/Inconsolata/Inconsolata-Bold.ttf);
+}
+
+/* ...font family iu_jian_mao_cao.....*/
+@font-face{
+    font-family:Ljmc;
+    src: url(../fonts/Liu_Jian_Mao_Cao/LiuJianMaoCao-Regular.ttf);
+}
+
+/* ...font family Lora.....*/
+@font-face{
+    font-family:Lora;
+    src: url(../fonts/Inconsolata/Inconsolata-Bold.ttf);
+}
